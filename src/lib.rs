@@ -138,7 +138,7 @@ fn write_trace(message: impl AsRef<str>) -> Result<(), Box<dyn std::error::Error
     let time = OffsetDateTime::now_local()?.format(&format_description::well_known::Rfc2822)?;
 
     writeln!(file)?;
-    writeln!(file, "Game crashed at {time}")?;
+    writeln!(file, "Game crashed/exited at {time}")?;
     writeln!(file, "Traces for all game threads:")?;
     writeln!(file, "{}", message.as_ref())?;
     writeln!(file)?;
